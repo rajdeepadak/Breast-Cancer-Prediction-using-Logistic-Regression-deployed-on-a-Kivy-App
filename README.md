@@ -2,4 +2,8 @@
 A simple app is desiged which takes inputs as medical parameters to determine if tumor is benign or malignant.
 
 # Prerequisites
+What things you need to install the software and how to install them
 
+```
+Give examples
+```
