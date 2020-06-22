@@ -1,5 +1,18 @@
 # Breast-Cancer-Prediction-using-Logistic-Regression-deployed-on-a-Kivy-App
-A simple app is desiged which takes inputs as medical parameters to determine if tumor is benign or malignant.
+A simple app is desiged which takes the following medical parameters inputs as to determine if tumor is benign or malignant. 
+
+1. Clump Thickness: 1 - 10
+2. Uniformity of Cell Size: 1 - 10
+3. Uniformity of Cell Shape: 1 - 10
+4. Marginal Adhesion: 1 - 10
+5. Single Epithelial Cell Size: 1 - 10
+6. Bare Nuclei: 1 - 10
+7. Bland Chromatin: 1 - 10
+8. Normal Nucleoli: 1 - 10
+9. Mitoses: 1 - 10 
+
+Click calculate to determine malignancy.
+![](Malignant_Values.png)
 
 # Prerequisites
 Libraries you need to install before running the code
