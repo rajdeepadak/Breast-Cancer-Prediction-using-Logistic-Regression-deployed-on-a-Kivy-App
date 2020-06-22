@@ -2,8 +2,17 @@
 A simple app is desiged which takes inputs as medical parameters to determine if tumor is benign or malignant.
 
 # Prerequisites
-What things you need to install the software and how to install them
+Libraries you need to install before running the code
 
+1. Install Kivy using Anaconda
 ```
-Give examples
+conda install kivy -c conda-forge
+```
+2. Install scikit-learn 
+```
+conda install scikit-learn
+```
+3. Install pandas
+```
+pip install pandas
 ```
