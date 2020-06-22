@@ -1,0 +1,122 @@
+<Windowmanager>:
+    Inputscreen:
+        id: screen1
+        name: "Input_Screen"
+    Outputscreen:
+        id: screen2
+        name: "Output_Screen"
+        result: screen1.Y_pred
+
+<Inputscreen>:
+
+    ct: ct
+    ucsz: ucsz
+    ucsp: ucsp
+    ma: ma
+    secs: secs
+    bn: bn
+    bc: bc
+    nn: nn
+    m: m
+
+    GridLayout:
+        cols: 1
+        size: root.width, root.height
+
+        GridLayout:
+            cols: 2
+
+            Label:
+                text: "Enter value between 1-10"
+                color: 1,1,0,1
+
+            Label:
+                text: "Enter here"
+                color: 1,1,0,1
+
+            Label:
+                text: "Clump Thickness: "
+            TextInput:
+                id: ct
+                multiline: False
+
+            Label:
+                text: "Uniformity of Cell Size: "
+            TextInput:
+                id: ucsz
+                multiline: False
+
+            Label:
+                text: "Uniformity of Cell Shape: "
+            TextInput:
+                id: ucsp
+                multiline: False
+
+            Label:
+                text: "Marginal Adhesion: "
+            TextInput:
+                id: ma
+                multiline: False
+
+            Label:
+                text: "Single Epithelial Cell Size: "
+            TextInput:
+                id: secs
+                multiline: False
+
+            Label:
+                text: "Bare Nuclei: "
+            TextInput:
+                id: bn
+                multiline: False
+
+            Label:
+                text: "Bland Chromatin: "
+            TextInput:
+                id: bc
+                multiline: False
+
+
+            Label:
+                text: "Normal Nucleoli: "
+            TextInput:
+                id: nn
+                multiline: False
+
+
+            Label:
+                text: "Mitoses: "
+            TextInput:
+                id: m
+                multiline: False
+
+            Label:
+                text: "Click the button to calculate"
+                color: 1,0,1,1
+
+            Button:
+                text: "Calculate"
+
+                on_press:
+                    root.Predictor() if ct.text != "" and ucsz.text != "" and ucsp.text != "" and ma.text != "" and secs.text != "" and bn.text != "" and bc.text != "" and nn.text != "" and m.text != "" else "Input_Screen"
+
+                on_release:
+                    app.root.current = "Output_Screen" if ct.text != "" and ucsz.text != "" and ucsp.text != "" and ma.text != "" and secs.text != "" and bn.text != "" and bc.text != "" and nn.text != "" and m.text != "" else "Input_Screen"
+                    root.manager.transition.direction = "left"
+
+
+<Outputscreen>:
+
+    GridLayout:
+        cols: 1
+        size: root.width, root.height
+
+        Label:
+            text: "Malignant" if str(root.result) == "4" else "Benign" if str(root.result) == "2" else "Please Enter a value between 1-10"
+            color: 0,1,1,1
+
+        Button:
+            text: "Go Back"
+            on_release:
+                app.root.current = "Input_Screen"
+                root.manager.transition.direction = "right"
